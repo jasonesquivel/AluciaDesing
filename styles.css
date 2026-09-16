@@ -1,4 +1,11 @@
 /* Paleta del boceto PDF + papel de cuaderno */
+@font-face {
+  font-family: "Helvetica Neue LT Pro";
+  src: url("assets/fonts/HelveticaNeueLTProMd.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+}
+
 :root {
   --magenta: #ED0F68;
   --maroon: #841523;
@@ -8,7 +15,8 @@
   --paper: #F7F0DE;
   --paper-line: rgba(237, 15, 104, 0.08);
   --font-hand: "Caveat", cursive;
-  --font-body: "Patrick Hand", cursive;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body: "Helvetica Neue LT Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,7 +25,8 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  font-size: 1.15rem;
+  font-weight: 500;
+  font-size: 1rem;
   color: var(--maroon);
   /* papel de cuaderno: rayas horizontales suaves */
   background:
@@ -28,7 +37,7 @@ body {
     var(--paper);
 }
 
-h1, h2, h3 { font-family: var(--font-hand); line-height: 1; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; }
 
 img { max-width: 100%; display: block; }
 
@@ -104,8 +113,8 @@ img { max-width: 100%; display: block; }
 }
 
 .hero h1 {
-  font-size: clamp(4rem, 11vw, 7rem);
-  font-weight: 700;
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 800;
   color: var(--magenta);
   transform: rotate(-2deg);
 }
@@ -199,7 +208,8 @@ img { max-width: 100%; display: block; }
 }
 
 .about h2 {
-  font-size: clamp(3rem, 6vw, 4.2rem);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
   color: var(--magenta);
   margin-bottom: 1.2rem;
   transform: rotate(-1deg);
@@ -207,7 +217,8 @@ img { max-width: 100%; display: block; }
 
 .about-hello {
   display: block;
-  font-size: 0.45em;
+  font-family: var(--font-hand);
+  font-size: 0.55em;
   color: var(--maroon);
   margin-bottom: 0.2rem;
 }
@@ -237,7 +248,7 @@ img { max-width: 100%; display: block; }
 .exp { transform: rotate(0.6deg); }
 
 .edu h3, .exp h3 {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: var(--magenta);
   margin-bottom: 1rem;
   text-decoration: underline wavy var(--magenta) 2px;
@@ -269,9 +280,9 @@ img { max-width: 100%; display: block; }
 .quote blockquote { max-width: 800px; margin: 0 auto; }
 
 .quote blockquote p {
-  font-family: var(--font-hand);
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.4rem, 3vw, 2rem);
   color: var(--magenta);
   transform: rotate(-1deg);
 }
@@ -291,7 +302,7 @@ img { max-width: 100%; display: block; }
 .testimonials-section { padding: 4.5rem 2rem; }
 
 .testimonials-section h2 {
-  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
   color: var(--magenta);
   text-align: center;
   transform: rotate(-1deg);
@@ -349,8 +360,8 @@ img { max-width: 100%; display: block; }
 .testimonial-toggle footer { display: flex; flex-direction: column; }
 
 .testimonial-toggle footer strong {
-  font-family: var(--font-hand);
-  font-size: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   color: var(--magenta);
 }
 
@@ -425,9 +436,9 @@ img { max-width: 100%; display: block; }
 }
 
 .marquee-track span {
-  font-family: var(--font-hand);
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: var(--magenta);
   white-space: nowrap;
 }
@@ -443,7 +454,8 @@ img { max-width: 100%; display: block; }
 .projects { padding: 5rem 2rem; text-align: center; }
 
 .projects h2 {
-  font-size: clamp(2.6rem, 6vw, 3.8rem);
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  font-weight: 800;
   color: var(--magenta);
   transform: rotate(-1.5deg);
 }
@@ -516,7 +528,7 @@ img { max-width: 100%; display: block; }
 }
 
 .project-info h3 {
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   color: var(--magenta);
 }
 
@@ -559,7 +571,8 @@ img { max-width: 100%; display: block; }
 }
 
 .cta-card h2 {
-  font-size: clamp(2.8rem, 6vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 800;
   color: var(--magenta);
 }
 
@@ -575,8 +588,8 @@ img { max-width: 100%; display: block; }
   gap: 0.5rem;
   background: var(--magenta);
   color: var(--pink);
-  font-family: var(--font-hand);
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   font-weight: 700;
   text-decoration: none;
   padding: 0.6rem 1.8rem;
