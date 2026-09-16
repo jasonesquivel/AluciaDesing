@@ -1,0 +1,20 @@
+.project-page { background: var(--pink); min-height: 100vh; }
+
+.project-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.project-detail h1 {
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  color: var(--magenta);
+}
+
+.project-meta {
+  font-weight: 700;
+  margin: 0.8rem 0 2rem;
+  opacity: 0.75;
+}
+
+.project-detail p { line-height: 1.6; }

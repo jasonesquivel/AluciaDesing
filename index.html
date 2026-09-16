@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrea Lucía — Diseño gráfico y contenido visual</title>
+  <meta name="description" content="Portafolio de proyectos gráficos, redes sociales, fotografía y material comercial. Diseño visual.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 1. Inicio -->
+  <header class="hero" id="inicio">
+    <p class="page-label">Inicio</p>
+
+    <nav class="nav sketch-border">
+      <a href="#sobre-mi">sobre mí</a>
+      <a href="#experiencia">experiencia</a>
+      <a class="nav-logo" href="#inicio">alú</a>
+      <a href="#proyectos">proyectos</a>
+      <a href="#contacto">contacto</a>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-avatar" aria-hidden="true">
+        <svg viewBox="0 0 120 130" width="120" height="130">
+          <path d="M22 118 Q18 60 34 40 Q46 24 60 24 Q74 24 86 40 Q102 60 98 118"
+                fill="none" stroke="var(--magenta)" stroke-width="4" stroke-linecap="round"/>
+          <path d="M40 100 Q38 66 60 64 Q82 66 80 100 Q70 108 60 107 Q50 108 40 100"
+                fill="none" stroke="var(--magenta)" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="50" cy="80" r="8.5" fill="none" stroke="var(--magenta)" stroke-width="3"/>
+          <circle cx="70" cy="80" r="8.5" fill="none" stroke="var(--magenta)" stroke-width="3"/>
+          <line x1="58.5" y1="80" x2="61.5" y2="80" stroke="var(--magenta)" stroke-width="3"/>
+          <path d="M55 96 Q60 100 65 96" fill="none" stroke="var(--magenta)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h1>¡bienvenido!</h1>
+      <p class="hero-sub">creemos diseño que conecte tu marca con experiencias</p>
+      <svg class="doodle-underline" viewBox="0 0 220 14" aria-hidden="true">
+        <path d="M4 8 Q30 2 56 8 T108 8 T160 8 T212 8" fill="none" stroke="var(--magenta)" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <p class="hero-tag">portafolio de proyectos gráficos, redes sociales, fotografía y material comercial</p>
+    </div>
+  </header>
+
+  <!-- 2. Sobre mí -->
+  <section class="about" id="sobre-mi">
+    <div class="about-inner">
+      <div class="about-photo">
+        <figure class="polaroid">
+          <span class="paperclip" aria-hidden="true"></span>
+          <img src="assets/andrea.jpg" alt="Retrato de Andrea Lucía"
+               onerror="this.style.display='none'; this.parentElement.classList.add('photo-missing')">
+          <figcaption>foto mía</figcaption>
+        </figure>
+      </div>
+      <div class="about-text">
+        <h2><span class="about-hello">hola! me llamo</span> Andrea Lucía</h2>
+        <p>
+          Soy diseñadora gráfica enfocada en la creación de contenido visual para
+          marcas comerciales, especialmente en rubros gastronómicos, belleza y
+          lifestyle. Mi trabajo combina dirección visual, diseño para redes sociales,
+          fotografía de producto y piezas impresas.
+        </p>
+        <p class="about-strong">
+          Ayudo a pequeñas y medianas empresas a construir una identidad visual
+          coherente y auténtica, reflejando su esencia y valores en cada pieza gráfica.
+        </p>
+      </div>
+    </div>
+
+    <div class="edu-exp">
+      <div class="edu sketch-border">
+        <h3>Educación</h3>
+        <ul>
+          <li><strong>Diseño gráfico</strong><span>Licenciatura — en curso</span></li>
+          <li><strong>Fotografía de producto</strong><span>Cursos y talleres</span></li>
+          <li><strong>Dirección de arte para RRSS</strong><span>Formación continua</span></li>
+        </ul>
+      </div>
+      <div class="exp sketch-border" id="experiencia">
+        <h3>Experiencia</h3>
+        <ul>
+          <li><strong>Dirección visual y RRSS — Crisol</strong><span>Contenido, fotografía y piezas impresas</span></li>
+          <li><strong>Identidad visual — belleza y lifestyle</strong><span>Branding para pymes</span></li>
+          <li><strong>Material comercial</strong><span>Menús, catálogos, empaques</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Cita -->
+  <section class="quote">
+    <blockquote>
+      <p>
+        “Andrea es una joven disciplinada, trabajadora, creativa, siempre con ganas
+        de hacer el siguiente paso mejor, es atenta a detalles y muy perfeccionista”
+      </p>
+      <footer>
+        <cite>— Roberto Carrillo</cite>
+        <span>Chef ejecutivo y propietario de Crisol</span>
+      </footer>
+    </blockquote>
+  </section>
+
+  <!-- 4. Testimonios interactivos -->
+  <section class="testimonials-section">
+    <h2>lo que dicen de mi trabajo</h2>
+    <p class="section-hint">(haz clic en una tarjeta para ver la historia completa)</p>
+    <div class="testimonials" id="testimonios">
+      <article class="testimonial-card sketch-border">
+        <button class="testimonial-toggle" aria-expanded="false" aria-controls="detalle-agata">
+          <p>Trabajar con Andrea fue muy fácil: entendió la esencia de la marca desde la primera reunión.</p>
+          <footer><strong>Agata</strong><span>Identidad visual completa</span></footer>
+          <span class="sparkle" aria-hidden="true">✦✧</span>
+        </button>
+        <div class="testimonial-details" id="detalle-agata" hidden>
+          <p>
+            “Cada pieza quedó impecable: logo, paleta, papelería y plantillas para redes.
+            Andrea presentó tres rutas creativas y nos guió para elegir la que mejor
+            representaba a la marca. Todo llegó a tiempo y documentado.”
+          </p>
+          <dl>
+            <div><dt>Proyecto</dt><dd>Rebranding de estudio de manicura</dd></div>
+            <div><dt>Servicios</dt><dd>Logotipo, paleta, papelería, plantillas RRSS</dd></div>
+            <div><dt>Año</dt><dd>2025</dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="testimonial-card sketch-border">
+        <button class="testimonial-toggle" aria-expanded="false" aria-controls="detalle-magda">
+          <p>El contenido para redes elevó por completo la presencia de nuestro restaurante.</p>
+          <footer><strong>Magda</strong><span>Redes sociales y fotografía</span></footer>
+          <span class="sparkle" aria-hidden="true">✦✧</span>
+        </button>
+        <div class="testimonial-details" id="detalle-magda" hidden>
+          <p>
+            “Ya no puedo esperar la siguiente campaña. La fotografía de producto y el
+            calendario de contenidos nos dieron una imagen consistente; en tres meses
+            duplicamos el alcance de nuestras publicaciones.”
+          </p>
+          <dl>
+            <div><dt>Proyecto</dt><dd>Contenido mensual para restaurante</dd></div>
+            <div><dt>Servicios</dt><dd>Fotografía de producto, diseño de feed, calendario</dd></div>
+            <div><dt>Año</dt><dd>2025</dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="testimonial-card sketch-border">
+        <button class="testimonial-toggle" aria-expanded="false" aria-controls="detalle-wiktoria">
+          <p>Como siempre, Andrea hace maravillas. Precisión y cuidado por el más mínimo detalle.</p>
+          <footer><strong>Wiktoria</strong><span>Material comercial impreso</span></footer>
+          <span class="sparkle" aria-hidden="true">✦✧</span>
+        </button>
+        <div class="testimonial-details" id="detalle-wiktoria" hidden>
+          <p>
+            “Un trato encantador y resultados que se notan: menús, tarjetas y señalética
+            con un acabado profesional que nuestros clientes comentan. ¡La recomiendo!”
+          </p>
+          <dl>
+            <div><dt>Proyecto</dt><dd>Material impreso para cafetería</dd></div>
+            <div><dt>Servicios</dt><dd>Menús, tarjetas, señalética, empaques</dd></div>
+            <div><dt>Año</dt><dd>2026</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>identidad visual <i>✱</i> identidad visual <i>✱</i> identidad visual <i>✱</i> identidad visual <i>✱</i> identidad visual <i>✱</i> </span>
+      <span>identidad visual <i>✱</i> identidad visual <i>✱</i> identidad visual <i>✱</i> identidad visual <i>✱</i> identidad visual <i>✱</i> </span>
+    </div>
+  </div>
+
+  <!-- 5. Proyectos -->
+  <section class="projects" id="proyectos">
+    <h2>disfruto trabajar en</h2>
+    <p class="section-hint">(pasa el cursor para ver cada proyecto; haz clic para abrir su página)</p>
+    <div class="projects-grid">
+      <a class="project-card sketch-border" href="proyectos/vision.html">
+        <div class="project-media">
+          <img src="assets/proyecto-vision.jpg" alt="Proyecto Visión"
+               onerror="this.parentElement.classList.add('media-missing')">
+        </div>
+        <div class="project-info">
+          <h3>visión</h3>
+          <span class="project-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+      <a class="project-card sketch-border" href="proyectos/crisol.html">
+        <div class="project-media">
+          <img src="assets/proyecto-crisol.jpg" alt="Proyecto Crisol"
+               onerror="this.parentElement.classList.add('media-missing')">
+        </div>
+        <div class="project-info">
+          <h3>crisol</h3>
+          <span class="project-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+      <a class="project-card sketch-border" href="proyectos/belleza.html">
+        <div class="project-media">
+          <img src="assets/proyecto-belleza.jpg" alt="Proyecto de belleza"
+               onerror="this.parentElement.classList.add('media-missing')">
+        </div>
+        <div class="project-info">
+          <h3>belleza</h3>
+          <span class="project-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+      <a class="project-card sketch-border" href="proyectos/lifestyle.html">
+        <div class="project-media">
+          <img src="assets/proyecto-lifestyle.jpg" alt="Proyecto lifestyle"
+               onerror="this.parentElement.classList.add('media-missing')">
+        </div>
+        <div class="project-info">
+          <h3>lifestyle</h3>
+          <span class="project-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. CTA -->
+  <section class="cta" id="contacto">
+    <div class="cta-card sketch-border">
+      <span class="cta-pill">disponible para proyectos</span>
+      <h2>elevemos tu<br>marca juntos</h2>
+      <p>
+        Cuéntame sobre tu marca y lo que necesitas — juntas definimos el alcance,
+        desde una pieza puntual hasta una identidad visual completa.
+      </p>
+      <a class="cta-button sketch-border" href="mailto:hola@andrealucia.design">escríbeme <span aria-hidden="true">↗</span></a>
+    </div>
+    <footer class="footer">
+      <p>© 2026 Andrea Lucía — diseño visual</p>
+      <div class="footer-links">
+        <a href="#" rel="noopener">Instagram</a>
+        <a href="#" rel="noopener">Behance</a>
+        <a href="mailto:hola@andrealucia.design">Email</a>
+      </div>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
