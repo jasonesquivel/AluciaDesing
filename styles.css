@@ -391,20 +391,19 @@ img { max-width: 100%; display: block; }
 }
 
 .testimonial-details {
-  padding: 0 1.5rem 1.5rem;
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.3s ease;
 }
 
-.testimonial-details > * { overflow: hidden; }
+.testimonial-details > * { overflow: hidden; min-height: 0; }
 
 .testimonial-card.open .testimonial-details { grid-template-rows: 1fr; }
 
 .testimonial-details p {
   line-height: 1.5;
   font-style: italic;
-  margin-bottom: 1rem;
+  margin: 0 1.5rem 1rem;
 }
 
 .testimonial-details dl {
@@ -413,6 +412,7 @@ img { max-width: 100%; display: block; }
   gap: 0.4rem;
   border-top: 2px dashed rgba(132, 21, 35, 0.3);
   padding-top: 0.9rem;
+  margin: 0 1.5rem 1.5rem;
 }
 
 .testimonial-details dl div { display: flex; gap: 0.5rem; font-size: 0.95rem; }
@@ -461,7 +461,7 @@ img { max-width: 100%; display: block; }
 }
 
 .projects-grid {
-  max-width: 1000px;
+  max-width: 820px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -545,6 +545,14 @@ img { max-width: 100%; display: block; }
 }
 
 .project-card:hover .project-arrow { transform: translateX(4px) rotate(-8deg); }
+
+/* En pantallas táctiles no existe hover: las imágenes se muestran siempre */
+@media (hover: none) {
+  .project-media img {
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* ---------- 6. CTA ---------- */
 .cta { padding: 4rem 2rem 0; }
