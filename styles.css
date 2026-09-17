@@ -405,7 +405,7 @@ img { max-width: 100%; display: block; }
 .testimonials-section { padding: 4.5rem 2rem; }
 
 .testimonials-section h2 {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-size: clamp(2.6rem, 6vw, 4rem);
   color: var(--magenta);
   text-align: center;
   transform: rotate(-1deg);
@@ -423,7 +423,7 @@ img { max-width: 100%; display: block; }
 
 .testimonial-card {
   background: #fff;
-  border: 3px solid var(--magenta);
+  border: 3px solid var(--lime);
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
