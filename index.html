@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andrea Lucía — Diseño gráfico y contenido visual</title>
   <meta name="description" content="Portafolio de proyectos gráficos, redes sociales, fotografía y material comercial. Diseño visual.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Andrea Lucía — Diseño gráfico y contenido visual">
+  <meta property="og:description" content="Portafolio de proyectos gráficos, redes sociales, fotografía y material comercial. Diseño visual.">
+  <meta property="og:locale" content="es_ES">
+  <!-- al publicar, cambiar por la URL absoluta del sitio, p. ej. https://usuario.github.io/repo/assets/og-alu.png -->
+  <meta property="og:image" content="assets/og-alu.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/mascota-alu.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +26,7 @@
   <header class="hero" id="inicio">
     <p class="page-label">Inicio</p>
 
-    <nav class="nav sketch-border">
+    <nav class="nav">
       <a href="#sobre-mi">sobre mí</a>
       <a href="#experiencia">experiencia</a>
       <a class="nav-logo" href="#inicio"><img src="assets/logo-alu.svg" alt="alú"></a>
@@ -65,7 +74,7 @@
     </div>
 
     <div class="edu-exp">
-      <div class="edu sketch-border">
+      <div class="edu">
         <h3>Educación</h3>
         <ul>
           <li><strong>Diseño gráfico</strong><span>Licenciatura — en curso</span></li>
@@ -73,7 +82,7 @@
           <li><strong>Dirección de arte para RRSS</strong><span>Formación continua</span></li>
         </ul>
       </div>
-      <div class="exp sketch-border" id="experiencia">
+      <div class="exp" id="experiencia">
         <h3>Experiencia</h3>
         <ul>
           <li><strong>Dirección visual y RRSS — Crisol</strong><span>Contenido, fotografía y piezas impresas</span></li>
@@ -84,83 +93,48 @@
     </div>
   </section>
 
-  <!-- 3. Cita -->
-  <section class="quote">
-    <blockquote>
-      <p>
-        “Andrea es una joven disciplinada, trabajadora, creativa, siempre con ganas
-        de hacer el siguiente paso mejor, es atenta a detalles y muy perfeccionista”
-      </p>
-      <footer>
-        <cite>— Roberto Carrillo</cite>
-        <span>Chef ejecutivo y propietario de Crisol</span>
-      </footer>
-    </blockquote>
-  </section>
-
-  <!-- 4. Testimonios interactivos -->
+  <!-- 3. Testimonios reales -->
   <section class="testimonials-section">
     <h2>lo que dicen de mi trabajo</h2>
-    <p class="section-hint">(haz clic en una tarjeta para ver la historia completa)</p>
+    <p class="section-hint">(haz clic en una tarjeta para ver el comentario completo)</p>
     <div class="testimonials" id="testimonios">
       <article class="testimonial-card sketch-border">
-        <button class="testimonial-toggle" aria-expanded="false" aria-controls="detalle-agata">
-          <p>Trabajar con Andrea fue muy fácil: entendió la esencia de la marca desde la primera reunión.</p>
-          <footer><strong>Agata</strong><span>Identidad visual completa</span></footer>
+        <button class="testimonial-toggle" aria-expanded="false" aria-controls="detalle-grace">
+          <p>“Andrea aprende muy rápido... ha impactado la forma de explotar un solo
+             logo y volverlo branding completo.”</p>
+          <footer><strong>Grace Carrillo</strong><span>Gerente General de Delia's Place Beauty Salon</span></footer>
           <span class="sparkle" aria-hidden="true">✦✧</span>
         </button>
-        <div class="testimonial-details" id="detalle-agata">
+        <div class="testimonial-details" id="detalle-grace">
           <div class="details-inner">
             <p>
-              “Cada pieza quedó impecable: logo, paleta, papelería y plantillas para redes.
-              Andrea presentó tres rutas creativas y nos guió para elegir la que mejor
-              representaba a la marca. Todo llegó a tiempo y documentado.”
+              “Andrea aprende muy rápido y la forma en la que ha adaptado los pocos
+              recuerdos que tenía la marca ha ido impactando la forma de explotar un
+              solo logo y volverlo branding completo.”
             </p>
             <dl>
-              <div><dt>Proyecto</dt><dd>Rebranding de estudio de manicura</dd></div>
-              <div><dt>Servicios</dt><dd>Logotipo, paleta, papelería, plantillas RRSS</dd></div>
-              <div><dt>Año</dt><dd>2025</dd></div>
+              <div><dt>Proyecto</dt><dd>Delia's Place — branding, packaging y piezas comerciales</dd></div>
             </dl>
           </div>
         </div>
       </article>
       <article class="testimonial-card sketch-border">
-        <button class="testimonial-toggle" aria-expanded="false" aria-controls="detalle-magda">
-          <p>El contenido para redes elevó por completo la presencia de nuestro restaurante.</p>
-          <footer><strong>Magda</strong><span>Redes sociales y fotografía</span></footer>
+        <button class="testimonial-toggle" aria-expanded="false" aria-controls="detalle-roberto">
+          <p>“Su atención al detalle ha ayudado a desarrollar y pulir a Crisol.
+             Crisol no tendría la identidad que tiene sin Andrea.”</p>
+          <footer><strong>Roberto Carrillo</strong><span>Chef ejecutivo y propietario de Crisol</span></footer>
           <span class="sparkle" aria-hidden="true">✦✧</span>
         </button>
-        <div class="testimonial-details" id="detalle-magda">
+        <div class="testimonial-details" id="detalle-roberto">
           <div class="details-inner">
             <p>
-              “Ya no puedo esperar la siguiente campaña. La fotografía de producto y el
-              calendario de contenidos nos dieron una imagen consistente; en tres meses
-              duplicamos el alcance de nuestras publicaciones.”
+              “Andrea ha sido un elemento clave para el desarrollo de Crisol Taquería
+              Urbana, su atención al detalle ha ayudado a desarrollarla y pulirla. Su
+              creatividad siempre ha brillado y se ha hecho notar a través de su
+              trabajo. Crisol no tendría la identidad que tiene sin Andrea.”
             </p>
             <dl>
-              <div><dt>Proyecto</dt><dd>Contenido mensual para restaurante</dd></div>
-              <div><dt>Servicios</dt><dd>Fotografía de producto, diseño de feed, calendario</dd></div>
-              <div><dt>Año</dt><dd>2025</dd></div>
-            </dl>
-          </div>
-        </div>
-      </article>
-      <article class="testimonial-card sketch-border">
-        <button class="testimonial-toggle" aria-expanded="false" aria-controls="detalle-wiktoria">
-          <p>Como siempre, Andrea hace maravillas. Precisión y cuidado por el más mínimo detalle.</p>
-          <footer><strong>Wiktoria</strong><span>Material comercial impreso</span></footer>
-          <span class="sparkle" aria-hidden="true">✦✧</span>
-        </button>
-        <div class="testimonial-details" id="detalle-wiktoria">
-          <div class="details-inner">
-            <p>
-              “Un trato encantador y resultados que se notan: menús, tarjetas y señalética
-              con un acabado profesional que nuestros clientes comentan. ¡La recomiendo!”
-            </p>
-            <dl>
-              <div><dt>Proyecto</dt><dd>Material impreso para cafetería</dd></div>
-              <div><dt>Servicios</dt><dd>Menús, tarjetas, señalética, empaques</dd></div>
-              <div><dt>Año</dt><dd>2026</dd></div>
+              <div><dt>Proyecto</dt><dd>Crisol Taquería Urbana — fotografía gastronómica y diseño de menú</dd></div>
             </dl>
           </div>
         </div>
@@ -179,29 +153,48 @@
   <!-- 5. Proyectos -->
   <section class="projects" id="proyectos">
     <h2>disfruto trabajar en</h2>
-    <p class="section-hint">(pasa el cursor para ver cada proyecto; haz clic para abrir su página)</p>
-    <div class="projects-grid">
-      <a class="project-card sketch-border" href="proyectos/delias.html">
-        <div class="project-media">
-          <img src="assets/proyecto-delias.jpg" alt="Bolsa de regalo de Delia's Place con corazón rosa"
-               loading="lazy" decoding="async"
-               onerror="this.parentElement.classList.add('media-missing')">
+    <p class="section-hint">(pasa el cursor sobre un folder para ver los archivos; haz clic para abrir la categoría)</p>
+    <div class="folders-grid">
+      <a class="folder" href="proyectos/crisol.html">
+        <span class="folder-tab" aria-hidden="true"></span>
+        <div class="folder-papers" aria-hidden="true">
+          <img src="assets/crisol/crisol-1.jpg" alt="" loading="lazy" decoding="async">
+          <img src="assets/crisol/crisol-4.jpg" alt="" loading="lazy" decoding="async">
+          <img src="assets/crisol/crisol-8.jpg" alt="" loading="lazy" decoding="async">
         </div>
-        <div class="project-info">
-          <h3>delia's place</h3>
-          <span class="project-arrow" aria-hidden="true">→</span>
-        </div>
+        <span class="folder-front" aria-hidden="true"></span>
+        <img class="folder-cover" src="assets/proyecto-crisol.jpg" alt="" loading="lazy" decoding="async">
+        <span class="folder-label">fotografía</span>
       </a>
-      <a class="project-card sketch-border" href="proyectos/crisol.html">
-        <div class="project-media">
-          <img src="assets/proyecto-crisol.jpg" alt="Fotografía gastronómica para Crisol"
-               loading="lazy" decoding="async"
-               onerror="this.parentElement.classList.add('media-missing')">
+      <a class="folder" href="proyectos/delias.html">
+        <span class="folder-tab" aria-hidden="true"></span>
+        <div class="folder-papers" aria-hidden="true">
+          <img src="assets/delias/delias-5.jpg" alt="" loading="lazy" decoding="async">
+          <img src="assets/crisol/crisol-6.jpg" alt="" loading="lazy" decoding="async">
         </div>
-        <div class="project-info">
-          <h3>crisol</h3>
-          <span class="project-arrow" aria-hidden="true">→</span>
+        <span class="folder-front" aria-hidden="true"></span>
+        <img class="folder-cover" src="assets/delias/delias-4.jpg" alt="" loading="lazy" decoding="async">
+        <span class="folder-label">identidad visual para redes</span>
+      </a>
+      <a class="folder" href="proyectos/crisol.html">
+        <span class="folder-tab" aria-hidden="true"></span>
+        <div class="folder-papers" aria-hidden="true">
+          <img src="assets/crisol/menu-2.jpg" alt="" loading="lazy" decoding="async">
+          <img src="assets/delias/delias-1.jpg" alt="" loading="lazy" decoding="async">
         </div>
+        <span class="folder-front" aria-hidden="true"></span>
+        <img class="folder-cover" src="assets/crisol/menu-1.jpg" alt="" loading="lazy" decoding="async">
+        <span class="folder-label">diseño editorial</span>
+      </a>
+      <a class="folder" href="proyectos/delias.html">
+        <span class="folder-tab" aria-hidden="true"></span>
+        <div class="folder-papers" aria-hidden="true">
+          <img src="assets/delias/delias-2.jpg" alt="" loading="lazy" decoding="async">
+          <img src="assets/delias/delias-3.jpg" alt="" loading="lazy" decoding="async">
+        </div>
+        <span class="folder-front" aria-hidden="true"></span>
+        <img class="folder-cover" src="assets/proyecto-delias.jpg" alt="" loading="lazy" decoding="async">
+        <span class="folder-label">packaging e identidad</span>
       </a>
     </div>
   </section>
@@ -215,14 +208,14 @@
         Cuéntame sobre tu marca y lo que necesitas — juntas definimos el alcance,
         desde una pieza puntual hasta una identidad visual completa.
       </p>
-      <a class="cta-button sketch-border" href="mailto:hola@andrealucia.design">escríbeme <span aria-hidden="true">↗</span></a>
+      <a class="cta-button sketch-border" href="mailto:aluciapicado@gmail.com">escríbeme <span aria-hidden="true">↗</span></a>
     </div>
     <footer class="footer">
       <p>© 2026 Andrea Lucía — diseño visual</p>
       <div class="footer-links">
-        <a href="#" rel="noopener">Instagram</a>
-        <a href="#" rel="noopener">Behance</a>
-        <a href="mailto:hola@andrealucia.design">Email</a>
+        <a href="https://www.instagram.com/aluvisualdesign" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:aluciapicado@gmail.com">aluciapicado@gmail.com</a>
+        <a href="https://wa.me/50558119208" target="_blank" rel="noopener">+505 5811 9208</a>
       </div>
     </footer>
   </section>

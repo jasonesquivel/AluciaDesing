@@ -29,25 +29,30 @@
 }
 
 .project-gallery {
-  columns: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
+  align-items: start;
 }
 
 .project-gallery img {
   width: 100%;
-  margin-bottom: 1.5rem;
   border: 3px solid var(--magenta);
-  border-radius: 14px 5px 12px 6px / 6px 12px 5px 14px;
+  border-radius: 12px;
   background: #fff;
   padding: 0.5rem;
   box-sizing: border-box;
   box-shadow: 5px 6px 0 rgba(237, 15, 104, 0.15);
-  break-inside: avoid;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.project-gallery img:nth-child(odd) { transform: rotate(-0.6deg); }
-.project-gallery img:nth-child(even) { transform: rotate(0.6deg); }
+.project-gallery img:hover {
+  transform: scale(1.04);
+  box-shadow: 8px 10px 0 rgba(237, 15, 104, 0.25);
+  position: relative;
+  z-index: 1;
+}
 
 @media (max-width: 640px) {
-  .project-gallery { columns: 1; }
+  .project-gallery { grid-template-columns: 1fr; }
 }
