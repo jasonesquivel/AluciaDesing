@@ -18,11 +18,12 @@ document.querySelectorAll('.testimonial-toggle').forEach((toggle) => {
   });
 });
 
-// Atrapa una estrella con el cursor y llévala hasta la otra: al juntarlas se
-// funden en UNA sola (solo una visible). Con clic, la estrella se divide en
-// dos direcciones: una hacia la mascota y otra hacia "Disponible para
-// proyectos". En pantallas táctiles, tocar la mascota o la pastilla ejecuta
-// la secuencia completa automáticamente.
+// Estrellas interactivas:
+//  - Atrapa UNA estrella con el cursor y haz clic: vuela sola a su propio
+//    destino (la estrella del héroe -> mascota; la del CTA -> pastilla).
+//  - Atrapa las DOS (pasa el cursor por ambas): se funden en una sola; al
+//    hacer clic se separan de nuevo hacia sus dos destinos.
+//  - En pantallas táctiles, tocar cualquiera ejecuta la secuencia completa.
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const touchDevice = window.matchMedia('(hover: none)').matches;
 
@@ -32,9 +33,20 @@ const avatar = document.querySelector('.hero-avatar');
 const pill = document.querySelector('.cta-pill');
 
 if (starA && starB && avatar && pill) {
+  const homeOf = new Map([[starA, avatar], [starB, pill]]);
   const followers = new Set();
+  const settled = new Set();
   let mergedOne = false;
-  let done = false;
+  let allDone = false;
+
+  const landingPoint = (partner) => {
+    if (partner === avatar) {
+      const a = avatar.querySelector('img').getBoundingClientRect();
+      return { x: a.left + a.width * 0.82, y: a.top + a.height * 0.12 };
+    }
+    const p = pill.getBoundingClientRect();
+    return { x: p.left + 4, y: p.top };
+  };
 
   const pin = (star) => {
     const r = star.getBoundingClientRect();
@@ -43,13 +55,37 @@ if (starA && starB && avatar && pill) {
     star.classList.add('following');
   };
 
+  const flyTo = (star, partner) => {
+    const t = landingPoint(partner);
+    star.classList.remove('star-pulse');
+    star.classList.add('following');
+    star.style.visibility = 'visible';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      star.classList.add('star-split');
+      star.style.left = t.x + 'px';
+      star.style.top = t.y + 'px';
+    }));
+    setTimeout(() => {
+      star.remove();
+      partner.classList.add('merged');
+    }, 820);
+  };
+
+  // una sola estrella vuela a su propio destino, sin afectar a la otra
+  const sendHome = (star) => {
+    followers.delete(star);
+    settled.add(star);
+    flyTo(star, homeOf.get(star));
+  };
+
   [starA, starB].forEach((star) => {
     star.addEventListener('mouseenter', () => {
-      if (done || reducedMotion || followers.has(star)) return;
+      if (reducedMotion || allDone || mergedOne) return;
+      if (settled.has(star) || followers.has(star)) return;
       pin(star);
       followers.add(star);
       // al atrapar la segunda, se funden en una sola
-      if (followers.size === 2 && !mergedOne) {
+      if (followers.size === 2) {
         mergedOne = true;
         setTimeout(() => {
           starB.style.visibility = 'hidden';
@@ -61,24 +97,16 @@ if (starA && starB && avatar && pill) {
   });
 
   document.addEventListener('mousemove', (e) => {
-    if (done) return;
     followers.forEach((star) => {
       star.style.left = e.clientX + 'px';
       star.style.top = e.clientY + 'px';
     });
   });
 
-  const finish = () => {
-    starA.remove();
-    starB.remove();
-    avatar.classList.add('merged');
-    pill.classList.add('merged');
-  };
-
-  const split = (fromX, fromY) => {
-    done = true;
-    const a = avatar.querySelector('img').getBoundingClientRect();
-    const p = pill.getBoundingClientRect();
+  // las dos fundidas se separan hacia ambos destinos
+  const splitBoth = (fromX, fromY) => {
+    allDone = true;
+    followers.clear();
     [starA, starB].forEach((star) => {
       star.classList.remove('star-pulse');
       star.classList.add('following');
@@ -86,20 +114,14 @@ if (starA && starB && avatar && pill) {
       star.style.left = fromX + 'px';
       star.style.top = fromY + 'px';
     });
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      [starA, starB].forEach((star) => star.classList.add('star-split'));
-      starA.style.left = (a.left + a.width * 0.82) + 'px';
-      starA.style.top = (a.top + a.height * 0.12) + 'px';
-      starB.style.left = (p.left + 4) + 'px';
-      starB.style.top = p.top + 'px';
-    }));
-    setTimeout(finish, 820);
+    flyTo(starA, avatar);
+    flyTo(starB, pill);
   };
 
-  // secuencia automática (móvil o clic directo en mascota/pastilla):
-  // las dos vuelan al centro, se funden y se separan
+  // secuencia automática (táctil o clic en mascota/pastilla sin agarrar)
   const autoSequence = () => {
-    done = true;
+    if (mergedOne || allDone) return;
+    mergedOne = true;
     followers.clear();
     [starA, starB].forEach((s) => { if (!s.classList.contains('following')) pin(s); });
     const cx = window.innerWidth / 2;
@@ -116,21 +138,33 @@ if (starA && starB && avatar && pill) {
       starA.classList.add('star-pulse');
     }, 640);
     setTimeout(() => {
-      done = false;
       [starA, starB].forEach((s) => s.classList.remove('star-meet'));
-      split(cx, cy);
+      splitBoth(cx, cy);
     }, 1050);
   };
 
   const onClick = (e) => {
-    if (done) return;
-    if (reducedMotion) { done = true; finish(); return; }
+    if (allDone) return;
+    if (reducedMotion) {
+      allDone = true;
+      starA.remove(); starB.remove();
+      avatar.classList.add('merged'); pill.classList.add('merged');
+      return;
+    }
+    // dos estrellas fundidas -> separar a ambos destinos
     if (mergedOne) {
       const r = starA.getBoundingClientRect();
-      split(r.left + r.width / 2, r.top + r.height / 2);
-    } else if (touchDevice || e.currentTarget === avatar || e.currentTarget === pill) {
-      // en táctil no hay cursor con qué atrapar: cualquier toque ejecuta
-      // la secuencia completa (encuentro, fusión y separación)
+      splitBoth(r.left + r.width / 2, r.top + r.height / 2);
+      return;
+    }
+    const target = e.currentTarget;
+    // una sola estrella agarrada -> vuela sola a su propio destino
+    if ((target === starA || target === starB) && followers.has(target)) {
+      sendHome(target);
+      return;
+    }
+    // táctil o clic directo en mascota/pastilla -> secuencia automática
+    if (touchDevice || target === avatar || target === pill) {
       autoSequence();
     }
   };
