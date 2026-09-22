@@ -1,9 +1,9 @@
 /* Paleta del boceto PDF + papel de cuaderno */
 @font-face {
   font-family: "Helvetica Neue LT Pro";
-  src: url("assets/fonts/HelveticaNeueLTProMd.woff2") format("woff2"),
-       url("assets/fonts/HelveticaNeueLTProMd.woff") format("woff"),
-       url("assets/fonts/HelveticaNeueLTProMd.otf") format("opentype");
+  src: url("assets/fonts/HelveticaNeueLTProMd.woff2?v=3") format("woff2"),
+       url("assets/fonts/HelveticaNeueLTProMd.woff?v=3") format("woff"),
+       url("assets/fonts/HelveticaNeueLTProMd.otf?v=3") format("opentype");
   font-weight: 500;
   font-display: swap;
 }
@@ -30,20 +30,14 @@ body {
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.55;
-  letter-spacing: 0.02em;
+  /* separación entre letras: da aire y evita que los acentos y la eñe se
+     encimen con la letra de al lado en cualquier navegador (Windows/Chrome) */
+  letter-spacing: 0.045em;
   color: var(--maroon);
   background: var(--bg);
 }
 
-/* Espacio alrededor de vocales acentuadas y la eñe (lo aplica script.js /
-   proyecto.js envolviendo solo esos caracteres) para que el acento nunca se
-   encime con la letra de al lado, en cualquier fuente o dispositivo. */
-.accent-space {
-  margin-left: 0.06em;
-  margin-right: 0.06em;
-}
-
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; letter-spacing: 0.04em; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; letter-spacing: 0.045em; }
 
 img { max-width: 100%; display: block; }
 

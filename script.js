@@ -174,36 +174,3 @@ if (starA && starB && avatar && pill) {
     el.classList.add('star-partner');
   });
 }
-
-
-// Da un respiro a las vocales acentuadas y a la eñe para que el acento no se
-// encime con la letra de al lado (independiente de la fuente/dispositivo).
-(function () {
-  const ACC = /[\u00E1\u00E9\u00ED\u00F3\u00FA\u00FC\u00F1\u00C1\u00C9\u00CD\u00D3\u00DA\u00DC\u00D1]/;
-  const SKIP = { SCRIPT: 1, STYLE: 1, TEXTAREA: 1, NOSCRIPT: 1 };
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-    acceptNode(n) {
-      if (!n.nodeValue || !ACC.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
-      const p = n.parentNode;
-      if (!p || SKIP[p.nodeName] || p.classList.contains('accent-space')) return NodeFilter.FILTER_REJECT;
-      return NodeFilter.FILTER_ACCEPT;
-    }
-  });
-  const nodes = [];
-  let node;
-  while ((node = walker.nextNode())) nodes.push(node);
-  nodes.forEach((n) => {
-    const frag = document.createDocumentFragment();
-    for (const ch of n.nodeValue) {
-      if (ACC.test(ch)) {
-        const s = document.createElement('span');
-        s.className = 'accent-space';
-        s.textContent = ch;
-        frag.appendChild(s);
-      } else {
-        frag.appendChild(document.createTextNode(ch));
-      }
-    }
-    n.parentNode.replaceChild(frag, n);
-  });
-})();
