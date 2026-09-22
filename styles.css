@@ -35,6 +35,14 @@ body {
   background: var(--bg);
 }
 
+/* Espacio alrededor de vocales acentuadas y la eñe (lo aplica script.js /
+   proyecto.js envolviendo solo esos caracteres) para que el acento nunca se
+   encime con la letra de al lado, en cualquier fuente o dispositivo. */
+.accent-space {
+  margin-left: 0.06em;
+  margin-right: 0.06em;
+}
+
 h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; letter-spacing: 0.04em; }
 
 img { max-width: 100%; display: block; }
