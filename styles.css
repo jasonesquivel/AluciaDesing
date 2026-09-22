@@ -1,12 +1,6 @@
-/* Paleta del boceto PDF + papel de cuaderno */
-@font-face {
-  font-family: "Helvetica Neue LT Pro";
-  src: url("assets/fonts/HelveticaNeueLTProMd.woff2?v=7") format("woff2"),
-       url("assets/fonts/HelveticaNeueLTProMd.woff?v=7") format("woff"),
-       url("assets/fonts/HelveticaNeueLTProMd.otf?v=7") format("opentype");
-  font-weight: 500;
-  font-display: swap;
-}
+/* Paleta del boceto PDF + papel de cuaderno.
+   Cuerpo de texto: Arimo (Google Fonts) — gemelo métrico de Helvetica con
+   acentos y eñes bien dibujados; se carga desde el <link> del <head>. */
 
 :root {
   --magenta: #ED0F68;
@@ -18,7 +12,7 @@
   --bg: #FDE8F0;
   --paper: var(--bg);
   --font-display: "Bricolage Grotesque", sans-serif;
-  --font-body: "Helvetica Neue LT Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -30,14 +24,11 @@ body {
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.55;
-  /* espaciado natural de la fuente; la fuente corregida coloca bien los
-     acentos y la eñe por sí sola, sin necesidad de separar las letras */
-  letter-spacing: normal;
   color: var(--maroon);
   background: var(--bg);
 }
 
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; letter-spacing: normal; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
 
 img { max-width: 100%; display: block; }
 
