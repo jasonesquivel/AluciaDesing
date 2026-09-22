@@ -1,9 +1,9 @@
 /* Paleta del boceto PDF + papel de cuaderno */
 @font-face {
   font-family: "Helvetica Neue LT Pro";
-  src: url("assets/fonts/HelveticaNeueLTProMd.woff2?v=5") format("woff2"),
-       url("assets/fonts/HelveticaNeueLTProMd.woff?v=5") format("woff"),
-       url("assets/fonts/HelveticaNeueLTProMd.otf?v=5") format("opentype");
+  src: url("assets/fonts/HelveticaNeueLTProMd.woff2?v=7") format("woff2"),
+       url("assets/fonts/HelveticaNeueLTProMd.woff?v=7") format("woff"),
+       url("assets/fonts/HelveticaNeueLTProMd.otf?v=7") format("opentype");
   font-weight: 500;
   font-display: swap;
 }
@@ -30,14 +30,14 @@ body {
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.55;
-  /* separación entre letras: da aire y evita que los acentos y la eñe se
-     encimen con la letra de al lado en cualquier navegador (Windows/Chrome) */
-  letter-spacing: 0.045em;
+  /* espaciado natural de la fuente; la fuente corregida coloca bien los
+     acentos y la eñe por sí sola, sin necesidad de separar las letras */
+  letter-spacing: normal;
   color: var(--maroon);
   background: var(--bg);
 }
 
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; letter-spacing: 0.045em; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; letter-spacing: normal; }
 
 img { max-width: 100%; display: block; }
 
