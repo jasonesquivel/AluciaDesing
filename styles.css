@@ -1,7 +1,9 @@
 /* Paleta del boceto PDF + papel de cuaderno */
 @font-face {
   font-family: "Helvetica Neue LT Pro";
-  src: url("assets/fonts/HelveticaNeueLTProMd.otf") format("opentype");
+  src: url("assets/fonts/HelveticaNeueLTProMd.woff2") format("woff2"),
+       url("assets/fonts/HelveticaNeueLTProMd.woff") format("woff"),
+       url("assets/fonts/HelveticaNeueLTProMd.otf") format("opentype");
   font-weight: 500;
   font-display: swap;
 }
@@ -32,7 +34,7 @@ body {
   background: var(--bg);
 }
 
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; letter-spacing: 0.04em; }
 
 img { max-width: 100%; display: block; }
 
